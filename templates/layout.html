@@ -15,7 +15,7 @@
 	
 	<link  rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
     
-    <title>UFO Data - {% block title %}{% endblock %}</title>
+    <title>UFO Info - {% block title %}{% endblock %}</title>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -25,8 +25,8 @@
         </div>
         <ul class="nav navbar-nav">
           <li {% if active_page == "about" %} class="active"{% endif %}><a href=".">About the Data</a></li>
-          <li {% if active_page == "popularity" %} class="active"{% endif %}><a href="popularity">Location</a></li>
-          <li {% if active_page == "databyshow" %} class="active"{% endif %}><a href="databyshow">Timeline</a></li>
+          <li {% if active_page == "location" %} class="active"{% endif %}><a href="location">Location</a></li>
+          <li {% if active_page == "timeline" %} class="active"{% endif %}><a href="timeline">Timeline</a></li>
         </ul>
       </div>
     </nav>

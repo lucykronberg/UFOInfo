@@ -1,1 +1,25 @@
+{% extends "layout.html" %}
 
+{% set active_page = "location" %}
+
+{% block title %}About the Data{% endblock %}
+
+{% block heading %}About the UFO Data{% endblock %}
+
+{% block body %}
+<h2>Location of Reported Sightings</h2>
+<form action="/location">
+<div style="width:200px;">
+  <select name="state">
+    {% for state in stateList %}
+		<option value={{ state }}> {{ state }}</option>	
+	{% endfor %}
+  <br>
+  </select>
+  <input type="submit" value="Here's the most common UFO shape from this state!">
+</div>
+</form>
+<p>{{ mostCommon }}</p>
+
+<p> It's important to note that the most common UFO shape nationally is 'Light', but for entertainment/learning purposes that answer has been excluded (this way the answer changes when you click other states), so users will see a state's SECOND most common shape. Sorry for the inconvenience!</p>
+{% endblock %}

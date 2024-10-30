@@ -1,1 +1,46 @@
+{% extends "layout.html" %}
+
+{% set active_page = "location" %}
+
+{% block title %}About the Data{% endblock %}
+
+{% block heading %}About the UFO Data{% endblock %}
+
+{% block body %}
+<h2>Timeline of Reported Sightings</h2>
+<script>
+	window.onload = function() {
+	 
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		axisX: {
+			title: "Years"
+			interval: 20,
+		},
+		axisY: {
+			title: "Reported Sightings",
+			suffix: "%",
+			includeZero: true
+		},
+		data: [{
+			type: "line",
+			name: "CPU Utilization",
+			connectNullData: true,
+			//nullDataLineDashType: "solid",
+			xValueType: "dateTime",
+			xValueFormatString: "DD MMM hh:mm TT",
+			yValueFormatString: "#,##0.##\"%\"",
+			dataPoints: {{ dataPoints }}
+		}]
+		
+	});
+	chart.render();
+	 
+	}                  
+</script>	 
+<div id="chartContainer" style="height: 500px; width: 50%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+{% endblock %}
+
+
 
