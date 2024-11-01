@@ -16,12 +16,12 @@
 	<link  rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
     
     <title>UFO Info - {% block title %}{% endblock %}</title>
-  </head>
-  <body>
+	<h1 id="UFOTitle"><b>Unidentified. Flying. Object. Info!</b></h1>
+ 
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href=".">UFO Data</a>
+          
         </div>
         <ul class="nav navbar-nav">
           <li {% if active_page == "about" %} class="active"{% endif %}><a href=".">About the Data</a></li>

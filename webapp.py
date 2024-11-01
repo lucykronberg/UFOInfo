@@ -40,14 +40,17 @@ def total_sightings(weeks):
             years[year] = 1
         else:
             years[year] = years[year] + 1 
+            
+    years = dict(sorted(years.items()))
     #del years[1940]
     #del years[2022]
     
     code = "["
     for year, gross in years.items():
-        code = code + Markup("{ x: '" + str(year) + "', y: " + str(gross/1000000) + " },")
+        code = code + Markup("{ x: '" + str(year) + "', y: " + str(gross) + " },")
     code = code[:-1] #remove the last comma
     code = code + "]"
+    print(code)
     return code
     
 

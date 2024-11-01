@@ -1,3 +1,18 @@
 body{
-	background: #7ca685
+	background: #a1c2a8
 }
+
+#UFOTitle{
+	text-align: center;
+}
+
+nav{
+	border-style: dotted;
+	border-color: #62a370;
+}
+
+p{
+	margin-left: 30px;
+	margin-right:50px;
+}
+
